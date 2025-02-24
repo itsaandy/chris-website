@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Good Natured Gardens</title>
+  
+  <!-- Google Fonts (Example: Cormorant Garamond for headings, Dancing Script for the tagline) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script src="carousel.js"></script>
+
+  <!-- HEADER / NAVIGATION -->
+  <header class="main-header">
+    <div class="container header-content">
+      <div class="logo">
+        <h1>Good Natured Gardens</h1>
+      </div>
+      <nav class="main-nav">
+        <!-- If you have navigation links, add them here -->
+        <ul>
+          <li><a href="tel:+61401961278">+61 401 961 278</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h2 class="tagline">Good Natured Gardens</h2>
+    </div>
+  </section>
+
+<!-- CONTACT US SECTION -->
+<section class="contact-section container">
+  <h2>Get in Touch</h2>
+  <form class="contact-form" action="#" method="POST">
+    <div class="form-group">
+      <input type="text" name="name" id="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+      <input type="tel" name="phone" id="phone" placeholder="Your Phone Number">
+    </div>
+    <div class="form-group">
+      <textarea name="message" id="message" placeholder="How can we help with your garden?" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+</section>
+
+  <!-- INTRO TEXT SECTION -->
+  <section class="intro-text container">
+    <h2>About Us</h2>
+    <p>
+      We are expert gardeners with 7+ years of experience working in high end gardens throughout Melbourne. 
+      We deliver exceptional horticultural services, tailored to your specific needs. We understand that our clients 
+      live busy lives and hope to free up time for the things they deem important; friends, hobbies and family. 
+      Our gardeners take pride in their work and will bring care, cultivation and creative solutions to your garden.
+    </p>
+  </section>
+
+  <!-- CAROUSEL SECTION -->
+  <section class="carousel-section container">
+    <div class="carousel">
+      <div class="carousel-container">
+        <button class="carousel-button prev" aria-label="Previous slide">❮</button>
+        <button class="carousel-button next" aria-label="Next slide">❯</button>
+        
+        <div class="carousel-track">
+          <div class="carousel-slide">
+            <img src="assets/FitzroyLandscapeProject.jpg" alt="Garden 1">
+            <h3>Fitzroy Landscape Project</h3>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/Hawthorn Maintenance Client.jpg" alt="Garden 2">
+            <h3>Hawthorn Maintenance Client</h3>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/Hawthorn Maintenance Garden.01.jpg" alt="Garden 3">
+            <h3>Hawthorn Maintenance garden</h3>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/Hawthorn Maintenance Garden.jpg" alt="Garden 3">
+            <h3>Hawthorn Maintenance garden</h3>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/Mckinnon Landscape project.02.jpg" alt="Garden 3">
+            <h3>Hawthorn Maintenance garden</h3>
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/Mckinnon Landscape project.jpg" alt="Garden 3">
+            <h3>Hawthorn Maintenance garden</h3>
+          </div>
+          <!-- Add more slides as needed based on your assets folder -->
+        </div>
+        
+        <div class="carousel-dots"></div>
+      </div>
+    </div>
+  </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="stats-section container">
+      <h2>Our Services</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <h4>Hedge Works and Topiary</h3>
+          <p>Our experienced maintenance experts love to keep your hedges looking their best. 
+            They have all of the most cutting edge tools and skills for topiary and hedge maintenance.</p>
+        </div>
+        <div class="stat-item">
+          <h4>Lawn Care</h3>
+          <p>From simple packages involving bi-annual fertiliser treatment and regular cuts to multi step nutrition, 
+            pest treatment and lawn renovation plans. The grass is always greener at Good Natured Gardens.</p>
+        </div>
+        <div class="stat-item">
+          <h4>Pest/Disease Treatment</h3>
+          <p>Our trained horticulturists are equipped to diagnose and treat any pest and disease problems that are effecting the health of your plants.</p>
+        </div>
+      </div>
+    </section>
+
+  <!-- TESTIMONIAL SECTION -->
+  <section class="testimonial-section container">
+    <div class="testimonial-card">
+      <p>Testimonials</p>
+      <blockquote>
+        "Good natured gardens have done an amazing job with our gardens. We would recommend Good Natured Gardens to everyone!.”
+      </blockquote>
+      <div class="testimonial-author">– Andy</div>
+      <div class="testimonial-rating">
+        ★★★★★
+      </div>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>© 2025 Good Natured Gardens. All rights reserved.</p>
+      <div class="social-links">
+        <!-- Placeholder for social icons/links -->
+        <a href="#">FB</a> | <a href="#">IG</a> | <a href="#">TW</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+
