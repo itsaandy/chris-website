@@ -24,7 +24,7 @@
       </div>
       <nav class="main-nav">
         <ul>
-          <li><a href="tel:+61401961278"><i class="fas fa-phone"></i> +61 401 961 278</a></li>
+          <li><a href="tel:+61478654825"><i class="fas fa-phone"></i> +61 478 654 825</a></li>
         </ul>
       </nav>
     </div>
@@ -41,25 +41,35 @@
 <!-- CONTACT US SECTION -->
 <section class="contact-section container">
   <h2>Get in Touch</h2>
-  <form class="contact-form" action="#" method="POST">
-    <div class="form-group">
-      <input type="text" name="name" id="name" placeholder="Your Name" required>
-    </div>
-    <div class="form-group">
-      <input type="tel" name="phone" id="phone" placeholder="Your Phone Number">
-    </div>
-    <div class="form-group">
-      <textarea name="message" id="message" placeholder="How can we help with your garden?" required></textarea>
-    </div>
-    <button type="submit" class="submit-btn">Send Message</button>
-  </form>
+  <div id="contact-form-container">
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLScidgKjYD9iaso5wPdoKFi3j0nZGqyU0HRnnzE70zYUHN4NcQ/formResponse" method="POST" target="_blank" class="contact-form" id="contactForm">
+      <div class="form-group">
+        <input type="text" name="entry.613565161" id="name" placeholder="Your Name" required>
+      </div>
+      <div class="form-group">
+        <input type="tel" name="entry.857899383" id="phone" placeholder="Your Phone Number (e.g. 0401 234 567)"
+               pattern="^(?:\+?61|0)[2-478](?:[ -]?[0-9]){8}$"
+               title="Please enter a valid Australian phone number" required>
+      </div>
+      <div class="form-group">
+        <textarea name="entry.51878242" id="message" placeholder="How can we help with your garden?" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn" id="submitBtn">
+        <span>Send Message</span>
+        <span class="spinner hidden"></span>
+      </button>
+    </form>
+  </div>
+  <div id="thank-you-message" class="hidden">
+    <h3>Thank You!</h3>
+    <p>We've received your message and will get back to you soon.</p>
+  </div>
 </section>
-
   <!-- INTRO TEXT SECTION -->
   <section class="intro-text container">
     <h2>About Us</h2>
     <p>
-      We are expert gardeners with 7+ years of experience working in high end gardens throughout Melbourne. 
+      We are expert gardeners with 7+ years of experience working in beautiful gardens throughout Melbourne.
       We deliver exceptional horticultural services, tailored to your specific needs. We understand that our clients 
       live busy lives and hope to free up time for the things they deem important; friends, hobbies and family. 
       Our gardeners take pride in their work and will bring care, cultivation and creative solutions to your garden.
@@ -152,4 +162,63 @@
   </footer>
 
 </body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const contactForm = document.getElementById("contactForm");
+    const thankYouMessage = document.getElementById("thank-you-message");
+    const formContainer = document.getElementById("contact-form-container");
+    const submitBtn = document.getElementById("submitBtn");
+    const spinner = submitBtn.querySelector(".spinner");
+    const phoneInput = document.getElementById("phone");
+
+    // Phone number validation
+    phoneInput.addEventListener("input", function(e) {
+      const phoneNumber = e.target.value.replace(/\s+/g, "");
+
+      // Basic Australian phone number validation
+      const isValid = /^(?:\+?61|0)[2-478](?:[0-9]){8}$/.test(phoneNumber.replace(/-/g, ""));
+
+      if (isValid || phoneNumber === "") {
+        phoneInput.setCustomValidity("");
+      } else {
+        phoneInput.setCustomValidity("Please enter a valid Australian phone number");
+      }
+    });
+
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent the default form submission
+
+      // Show loading spinner
+      submitBtn.disabled = true;
+      spinner.classList.remove("hidden");
+
+      // Get form data
+      const formData = new FormData(contactForm);
+
+      // Submit form data using fetch API
+      fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        mode: "no-cors" // Required for Google Forms
+      })
+      .then(() => {
+        // Hide form and show thank you message
+        formContainer.style.display = "none";
+        thankYouMessage.classList.remove("hidden");
+
+        // Reset form for future use
+        contactForm.reset();
+      })
+      .catch(error => {
+        console.error("Error submitting form:", error);
+        alert("There was an error submitting your message. Please try again later.");
+      })
+      .finally(() => {
+        // Hide spinner
+        submitBtn.disabled = false;
+        spinner.classList.add("hidden");
+      });
+    });
+  });
+</script>
 </html>

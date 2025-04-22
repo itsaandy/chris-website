@@ -1,3 +1,10 @@
+:root {
+  --primary: #546c5c;
+  --background: #eefff2;
+  --background-light: #f9fffa;
+  --white: #fff;
+}
+
 /* ---------------------------
    BASIC RESET & GLOBAL STYLES
 ---------------------------- */
@@ -9,8 +16,8 @@
 
 html, body {
   font-family: 'Cormorant Garamond', serif;
-  background-color: #F8F5EE; /* Light off-white background */
-  color: #2D2B26; /* Dark gray/brown for text */
+  background-color: var(--background); /* Light off-white background */
+  color: var(--primary); /* Dark gray/brown for text */
   line-height: 1.6;
 }
 
@@ -30,7 +37,7 @@ img {
    HEADER / NAVIGATION
 ---------------------------- */
 .main-header {
-  background-color: #F8F5EE;
+  background-color: var(--background);
   padding: 1rem 0;
 }
 
@@ -53,7 +60,7 @@ img {
 
 .main-nav a {
   text-decoration: none;
-  color: #2D2B26;
+  color: #2C332E;
   font-weight: 600;
   transition: color 0.3s;
 }
@@ -82,7 +89,7 @@ img {
 .hero-content {
   position: relative;
   text-align: center;
-  color: #fff;
+  color: var(--white);
 }
 
 .tagline {
@@ -117,7 +124,7 @@ img {
 
 .stat-item p {
   font-size: 1rem;
-  color: #686256;
+  color: var(--primary);
 }
 
 
@@ -241,7 +248,7 @@ img {
 .service-item {
   flex: 1 1 300px;
   max-width: 400px;
-  background: #fff;
+  background: var(--background-light);
   padding: 1.5rem;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -253,7 +260,7 @@ img {
   font-weight: 600;
   font-size: 1.25rem;
   text-align: center;
-  color: #333;
+  color: var(--primary);
 }
 
 .service-item p {
@@ -293,7 +300,8 @@ img {
 .contact-form textarea {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(84, 108, 92, 0.1);
+  /*border: none;*/
   border-radius: 4px;
   font-family: inherit;
   font-size: 1rem;
@@ -305,7 +313,7 @@ img {
 }
 
 .submit-btn {
-  background-color: #333;
+  background-color: var(--primary);
   color: white;
   padding: 1rem 2rem;
   border: none;
@@ -332,7 +340,7 @@ img {
 
 .testimonial-card {
   background-color: #fff;
-  border: 1px solid #C2BBAA;
+  border: 1px solid var(--primary);
   padding: 2rem;
   max-width: 600px;
   text-align: center;
@@ -392,7 +400,7 @@ img {
    FOOTER
 ---------------------------- */
 .main-footer {
-  background-color: #F8F5EE;
+  background-color: #E2FEEF;
   padding: 2rem 0;
   margin-top: 3rem;
 }
@@ -416,3 +424,34 @@ img {
   color: #8A8166;
 }
 
+
+/* Form submission styles */
+.hidden {
+  display: none !important;
+}
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#thank-you-message {
+  text-align: center;
+  padding: 30px;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
