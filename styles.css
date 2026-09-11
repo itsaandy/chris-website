@@ -47,9 +47,15 @@ img {
   align-items: center;
 }
 
-.logo h1 {
+.logo h1,
+.logo .site-name {
   font-size: 2rem;
   font-weight: 700;
+}
+
+.logo a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .main-nav ul {
@@ -67,6 +73,15 @@ img {
 
 .main-nav a:hover {
   color: #8A8166; /* Slight hover color */
+}
+
+.main-nav a:focus-visible,
+.logo a:focus-visible,
+.area-links a:focus-visible,
+.button-link:focus-visible,
+.breadcrumb a:focus-visible {
+  outline: 3px solid #8A8166;
+  outline-offset: 4px;
 }
 
 .hero {
@@ -387,6 +402,51 @@ img {
   font-size: 1.1rem;
 }
 
+.service-areas-section {
+  max-width: 800px;
+  margin: 3rem auto 4rem;
+}
+
+.service-areas-section h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.service-areas-section > p {
+  margin: 0.5rem auto 1.5rem;
+  text-align: center;
+}
+
+.area-links {
+  border-top: 1px solid rgba(84, 108, 92, 0.35);
+}
+
+.area-links a {
+  display: grid;
+  grid-template-columns: minmax(10rem, 0.8fr) 1.2fr;
+  gap: 1.5rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(84, 108, 92, 0.35);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.area-links span {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.area-links small {
+  color: #4f5a53;
+  font-size: 1rem;
+}
+
+.area-links a:hover span {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
 .text-link,
 .faq-list a {
   color: var(--primary);
@@ -434,8 +494,204 @@ img {
 }
 
 @media (max-width: 768px) {
+  .header-content {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+  }
+
   .location-section {
     margin-top: 3rem;
+    padding: 1.5rem;
+  }
+
+  .area-links a {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+/* ---------------------------
+   LOCAL SERVICE PAGES
+---------------------------- */
+.area-page .main-header {
+  border-bottom: 1px solid rgba(84, 108, 92, 0.2);
+}
+
+.breadcrumb {
+  max-width: 900px;
+  margin: 1rem auto;
+  font-size: 0.95rem;
+}
+
+.breadcrumb a {
+  color: var(--primary);
+  text-underline-offset: 0.2em;
+}
+
+.area-hero {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: flex-end;
+  background-position: center;
+  background-size: cover;
+  color: var(--white);
+}
+
+.blackburn-north-hero {
+  background-image: url("assets/main.jpeg");
+}
+
+.hawthorn-hero {
+  background-image: url("assets/mowing.JPG");
+}
+
+.eltham-hero {
+  background-image: url("assets/hedging-2.JPG");
+}
+
+.donvale-hero {
+  background-image: url("assets/main.jpeg");
+}
+
+.surrey-hills-hero {
+  background-image: url("assets/secateurs-1.png");
+}
+
+.camberwell-hero {
+  background-image: url("assets/mowing.JPG");
+}
+
+.area-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(24, 38, 29, 0.78), rgba(24, 38, 29, 0.08) 75%);
+}
+
+.area-hero-content {
+  position: relative;
+  max-width: 900px;
+  padding: 4rem 0 3rem;
+}
+
+.area-hero h1 {
+  max-width: 18ch;
+  font-size: clamp(2.5rem, 7vw, 4.75rem);
+  line-height: 0.98;
+}
+
+.area-hero p {
+  max-width: 52ch;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+}
+
+.area-content {
+  max-width: 900px;
+  margin: 3rem auto;
+}
+
+.area-content h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 2rem;
+}
+
+.area-content h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.35rem;
+}
+
+.area-content p,
+.area-content li {
+  max-width: 72ch;
+  font-size: 1.08rem;
+}
+
+.area-content p + p {
+  margin-top: 1rem;
+}
+
+.local-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 1.5rem 0 3rem;
+}
+
+.local-services article {
+  padding-top: 1rem;
+  border-top: 3px solid var(--primary);
+}
+
+.local-proof {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: center;
+  margin: 3rem 0;
+  padding: 2rem;
+  background: var(--background-light);
+}
+
+.local-proof img {
+  width: 100%;
+  min-height: 250px;
+  object-fit: cover;
+}
+
+.quote-band {
+  margin: 4rem auto;
+  padding: 2.5rem;
+  max-width: 900px;
+  background: var(--primary);
+  color: var(--white);
+  text-align: center;
+}
+
+.quote-band h2 {
+  font-size: 2rem;
+}
+
+.quote-band p {
+  margin: 0.5rem auto 1.25rem;
+}
+
+.button-link {
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: var(--white);
+  color: var(--primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.area-page .faq-section {
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 768px) {
+  .area-hero {
+    min-height: 56vh;
+  }
+
+  .area-hero-content {
+    padding-bottom: 2rem;
+  }
+
+  .local-services,
+  .local-proof {
+    grid-template-columns: 1fr;
+  }
+
+  .local-proof,
+  .quote-band {
     padding: 1.5rem;
   }
 }
