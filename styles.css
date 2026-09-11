@@ -369,18 +369,75 @@ img {
 /* ---------------------------
    FAQ SECTION
 ---------------------------- */
-.faq-section {
-  margin: 3rem auto;
-  text-align: center;
+.location-section {
+  max-width: 800px;
+  margin: 4rem auto 3rem;
+  padding: 2rem;
+  background: var(--background-light);
+  border-left: 4px solid var(--primary);
 }
 
-.faq-section h2 {
+.location-section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.faq-section p {
-  margin: 0.5rem auto;
+.location-section p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.text-link,
+.faq-list a {
+  color: var(--primary);
+  font-weight: 700;
+  text-underline-offset: 0.2em;
+}
+
+.faq-section {
+  margin: 3rem auto;
+  max-width: 800px;
+}
+
+.faq-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.faq-list {
+  border-top: 1px solid rgba(84, 108, 92, 0.25);
+}
+
+.faq-list details {
+  border-bottom: 1px solid rgba(84, 108, 92, 0.25);
+  padding: 1rem 0;
+}
+
+.faq-list summary {
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.faq-list p {
+  max-width: 70ch;
+  margin: 0.75rem 1.25rem 0 0;
+  color: #4f5a53;
+}
+
+.text-link:focus-visible,
+.faq-list a:focus-visible,
+.faq-list summary:focus-visible {
+  outline: 3px solid #8A8166;
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .location-section {
+    margin-top: 3rem;
+    padding: 1.5rem;
+  }
 }
 
 /* ---------------------------
